@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: propertyhub-postgres
+    environment:
+      POSTGRES_DB: propertyhub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - propertyhub_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  propertyhub_postgres_data:

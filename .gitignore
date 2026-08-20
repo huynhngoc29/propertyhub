@@ -1,0 +1,13 @@
+appsettings.Development.json
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+
+
+
+node_modules/
+.env
+.env.*
