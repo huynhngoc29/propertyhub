@@ -7,4 +7,5 @@ public class UnitDto
     public decimal Price { get; set; }
     public string Status { get; set; } = string.Empty;
     public int PropertyId { get; set; }
+    public string? ThumbnailUrl { get; set; }
 }

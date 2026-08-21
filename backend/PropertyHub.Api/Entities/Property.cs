@@ -11,5 +11,6 @@ public class Property
     public string Status { get; set; } = string.Empty;
     public decimal Price { get; set; }
     public DateTime CreatedAt { get; set; }
+    public string? ThumbnailUrl { get; set; }
     public List<Unit> Units { get; set; } = new();
 }

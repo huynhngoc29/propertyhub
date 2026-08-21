@@ -1,4 +1,5 @@
 namespace PropertyHub.Api.DTOs;
+
 public class CreateUnitDto
 {
     public string Code { get; set; } = string.Empty;
@@ -8,5 +9,7 @@ public class CreateUnitDto
     public string Status { get; set; } = string.Empty;
 
     public int PropertyId { get; set; }
+    public string? ThumbnailUrl { get; set; }
+
 
 }

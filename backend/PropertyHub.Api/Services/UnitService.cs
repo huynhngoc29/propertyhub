@@ -32,7 +32,8 @@ public class UnitService : IUnitService
             Code = dto.Code,
             Price = dto.Price,
             Status = dto.Status,
-            PropertyId = dto.PropertyId
+            PropertyId = dto.PropertyId,
+            ThumbnailUrl = dto.ThumbnailUrl
         };
         _context.Units.Add(unit);
         await _context.SaveChangesAsync();
@@ -53,6 +54,7 @@ public class UnitService : IUnitService
         unit.Code = dto.Code;
         unit.Price = dto.Price;
         unit.Status = dto.Status;
+        unit.ThumbnailUrl = dto.ThumbnailUrl;
 
         await _context.SaveChangesAsync();
         return unit;

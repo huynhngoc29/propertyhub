@@ -10,6 +10,6 @@ public class PropertyDetailDto
     public string Type { get; set; } = string.Empty;
     public string Status { get; set; } = string.Empty;
     public decimal Price { get; set; }
-
+    public string? ThumbnailUrl { get; set; }
     public List<UnitDto> Units { get; set; } = new();
 }

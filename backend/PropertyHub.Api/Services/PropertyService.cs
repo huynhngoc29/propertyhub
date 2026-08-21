@@ -32,6 +32,7 @@ public class PropertyService : IPropertyService
             Type = dto.Type,
             Status = dto.Status,
             Price = dto.Price,
+            ThumbnailUrl = dto.ThumbnailUrl,
             CreatedAt = DateTime.UtcNow
         };
         _context.Properties.Add(property);
@@ -53,6 +54,7 @@ public class PropertyService : IPropertyService
         property.Type = dto.Type;
         property.Status = dto.Status;
         property.Price = dto.Price;
+        property.ThumbnailUrl = dto.ThumbnailUrl;
         await _context.SaveChangesAsync();
         return property;
     }
