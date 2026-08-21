@@ -9,4 +9,5 @@ public class AppDbContext : DbContext
         
     }
     public DbSet<Property> Properties { get; set; }
+    public DbSet<Unit> Units { get; set; }
 }

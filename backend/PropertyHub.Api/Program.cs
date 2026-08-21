@@ -9,6 +9,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IPropertyService, PropertyService>();
+builder.Services.AddScoped<IUnitService, UnitService>();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
