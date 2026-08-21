@@ -6,8 +6,8 @@ namespace PropertyHub.Api.Services;
 
 public class PropertyService : IPropertyService
 {
-   private readonly AppDbContext _context;
-   public PropertyService(AppDbContext context)
+    private readonly AppDbContext _context;
+    public PropertyService(AppDbContext context)
     {
         _context = context;
     }
@@ -41,13 +41,13 @@ public class PropertyService : IPropertyService
 
     public async Task<Property?> UpdateAsync(int id, UpdatePropertyDto dto)
     {
-        var property = await _context.Properties.FindAsync (id);
-        if(property == null)
+        var property = await _context.Properties.FindAsync(id);
+        if (property == null)
         {
             return null;
         }
         property.Code = dto.Code;
-        property.Name = dto.Name;   
+        property.Name = dto.Name;
         property.Address = dto.Address;
         property.City = dto.City;
         property.Type = dto.Type;
@@ -59,11 +59,16 @@ public class PropertyService : IPropertyService
     public async Task<bool> DeleteAsync(int id)
     {
         var property = await _context.Properties.FindAsync(id);
-        if(property == null){
+        if (property == null)
+        {
             return false;
         }
         _context.Properties.Remove(property);
         await _context.SaveChangesAsync();
         return true;
+    }
+    public async Task<Property?> GetDetailAsync(int id)
+    {
+        return await _context.Properties.Include(p => p.Units).FirstOrDefaultAsync(p => p.Id == id);
     }
 }
